@@ -1,0 +1,1 @@
+var jsonData = '[{"data":{},"type":"circle","attrs":{"cx":250,"cy":250,"r":40,"stroke":"#558CB1","gradient":"90-#526c7a-#64a0c1","stroke-width":2},"transform":"","id":0}]';

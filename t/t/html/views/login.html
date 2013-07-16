@@ -1,0 +1,49 @@
+
+<!-- Page start -->
+<div>
+
+        <!-- Header begin -->
+        <header class="login">
+
+                <!-- Logo begin -->
+                <div class="logo">
+                        <img src="images/login-logo.png" alt="My site logo" />
+                </div>
+                <!-- Logo end -->
+
+        </header>
+        <!-- Header end -->
+
+        <!-- Content begin -->
+        <div class="content">
+                
+                <section class="auth-panel">
+                        <h1 class="title">Login</h1>
+                        <a class="reg-link" href="#/register">
+                                Haven't registered yet? Sign up now
+                                <img src="images/green-play-icon.png" />
+                        </a>
+                        <div class="error-message" ng-show="usernameBlank || usernameInvalid || passwordBlank || passwordInvalid" ng-cloak>
+                                <p ng-show="usernameBlank = loginForm.username.$dirty && loginForm.username.$error.required">"Username" cannot be blank.</p>
+                                <p ng-show="usernameInvalid = loginForm.username.$dirty && loginForm.username.$error.pattern">Only latin letters, numbers and underscore symbol are allowed in "Username" field.</p>
+                                <p ng-show="passwordBlank = loginForm.password.$dirty && loginForm.password.$error.required">"Password" cannot be blank</p>
+                                <p ng-show="passwordInvalid = loginForm.password.$dirty && loginForm.password.$error.pattern">Only latin letters and numbers are allowed in "Password" field.</p>
+                        </div>
+			<form name="loginForm" ng-submit="submitLogin()" novalidate>
+                                <div class="form-row">
+                                        <input type="text" id="username" name="username" ng-model="login.username" required placeholder="username" class="username-pict" ng-pattern="/^[\w0-9_]*$/"/>
+                                </div>
+                                <div class="form-row">
+                                        <input type="password" id="password" name="password" ng-model="login.password" required placeholder="password" class="password-pict" ng-pattern="/^[\w0-9]*$/"/>
+                                </div>
+                                <div class="form-row tcenter">
+                                        <input type="submit" value="Login" />
+                                        <a class="forgot-link" href="#">Forgot username or password?</a>
+                                </div>
+                        </form>
+                </section>
+                
+        </div>
+        <!-- Content end -->
+        
+</div>

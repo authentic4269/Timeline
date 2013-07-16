@@ -1,0 +1,31 @@
+			#canvas_container {  
+				width: 500px;  
+				border: 1px solid #aaa;  
+			}
+			#downloadPdf {
+				font: 14px "Trebuchet MS", sans-serif;
+				margin-bottom: 10px;
+			}
+			
+			/*Ajax Loader*/
+			 #loader {
+			  position:fixed; 
+			  display:none;
+			  height:100%; 
+			  width:100%;
+			  background:#CCC; 
+			  opacity:.5;
+			  z-index: 1000;
+			}
+			#loader span {
+				display:block; 
+				position:absolute; 
+				color:#fff; 
+				font-size:0px;
+				background:url(../img/loader.gif) no-repeat center center;
+				cursor:default;
+				height:150px;
+				width:150px;
+				z-index:2000;
+			}
+			/**/  

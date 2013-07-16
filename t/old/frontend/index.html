@@ -1,0 +1,28 @@
+<? <?php 
+	require_once("check_token.php");
+ ?>
+<html>  
+	<head>  
+		<title>Raphael Play</title>
+		<link href="css/ui-lightness/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+		<script src="js/jquery-1.9.1.js"></script>
+		<script src="js/jquery-ui-1.10.3.custom.js"></script>
+		<script type="text/javascript" src="js/raphael-min.js"></script>
+		<script type="text/javascript" src="js/raphael.json.js"></script>
+		<script type="text/javascript" src="js/ajaxRequest.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>  
+		<link href="css/style.css" rel="stylesheet">
+	</head>  
+	<body>
+		<select id="project_selector">
+		</select>
+		<select id="event_selector">
+		</select>
+		<div id="loader"><span>Loading...</span></div>
+		<button id="downloadPdf" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false"><span class="ui-button-text">Download PDF</span></button>
+		<p>Click the elements and drag over the square. Then you can download the PDF by clicking the button above (don't forget to allow popup to open, if asked)<p>
+		<label for="textDemoInput">Try type text here:</label>
+		<input id="textDemoInput" type="text" value="demo text"/>
+		<div id="canvas_container"></div>
+	</body>  
+</html>  

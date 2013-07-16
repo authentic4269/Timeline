@@ -1,0 +1,165 @@
+/* $HEADER
+---------------------------------*/
+header.login {
+	background: none;
+	padding: 90px 0 38px;
+	text-align: center;
+}
+
+/** Page logo */
+.logo {
+
+}
+.logo img {
+
+} 
+
+
+
+/* $CONTENT
+---------------------------------*/
+.content {
+	
+}
+
+/** Login panel */
+.auth-panel {
+	background: #fafafa;
+	border: solid 1px #f3f3f3;
+	margin: 0 auto 38px;
+	padding: 28px;
+	position: relative;
+	width: 380px;
+}
+.auth-panel .title {
+	color: #6d6d6d;
+	font-size: 20px;
+	margin-bottom: 40px;
+}
+.auth-panel .reg-link,
+.auth-panel .login-link {
+	color: #4b94b4;
+    display: block;
+    font-size: 12px;
+    height: 23px;
+    padding: 12px 0 0 20px;
+    position: absolute;
+    right: -6px;
+    text-decoration: none;
+    top: 24px;
+}
+.auth-panel .reg-link {
+	background: url(../../images/reg-link-tape.png) no-repeat;
+    width: 263px;
+}
+.auth-panel .login-link {
+	background: url(../../images/login-link-tape.png) no-repeat;
+	width: 226px;
+}
+.auth-panel .reg-link img,
+.auth-panel .login-link img {
+	position: absolute;
+    right: 9px;
+    top: 11px;
+}
+
+.auth-panel .error-message {
+	background: #ED5252;
+    color: #4C0000;
+    font-size: 13px;
+    margin-bottom: 10px;
+    padding: 5px 20px;
+}
+.auth-panel .form-help {
+	color: #A0A0A0;
+    font-size: 12px;
+    font-style: italic;
+    margin-bottom: 0;
+    padding-top: 5px;
+}
+
+.auth-panel .form-row {
+    margin: 0 0 10px;
+}
+.auth-panel .form-row .form-column-left {
+	float: left;
+	width: 48%;
+}
+.auth-panel .form-row .form-column-right {
+	float: right;
+	width: 48%;
+}
+
+.auth-panel label {
+	color: #a0a0a0;
+	display: block;
+	font-size: 14px;
+	margin-bottom: 5px;
+}
+
+.auth-panel input[type=text],
+.auth-panel input[type=password],
+.auth-panel input[type=email] {
+	border: 1px solid #EBEBEB;
+    color: #C5C5C5;
+    font-size: 14px;
+    height: 38px;
+    padding: 0 12px;
+    width: 354px;
+}
+.auth-panel input[type=text].small,
+.auth-panel input[type=password].small {
+	width: 157px;
+}
+.auth-panel input.username-pict,
+.auth-panel input.password-pict {
+    padding: 0 12px 0 45px;
+    width: 321px;
+}
+.auth-panel input.username-pict {
+	background: url(../../images/username-pict.png) 13px 10px no-repeat;
+}
+.auth-panel input.password-pict {
+	background: url(../../images/password-pict.png) 10px 13px no-repeat;
+}
+.auth-panel input[type=text].ng-dirty.ng-invalid,
+.auth-panel input[type=password].ng-dirty.ng-invalid,
+.auth-panel input[type=email].ng-dirty.ng-invalid {
+	background-color: #ffeded;
+	border-color: #edb0b0;
+	color: #cc1e1e;
+	font-size: 14px;
+}
+.auth-panel input[type=text].ng-dirty.ng-invalid,
+.auth-panel input[type=email].ng-dirty.ng-invalid {
+	background-position: 13px -22px;
+}
+.auth-panel input[type=password].ng-dirty.ng-invalid {
+	background-position: 10px -23px;
+}
+
+.auth-panel input[type=submit] {
+	background: url(../../images/login-button.png) repeat-x;
+	border: none;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	color: #ffffff;
+	cursor: pointer;
+	font-size: 20px;
+	display: block;
+	height: 50px;
+	margin: 30px auto 0;
+	text-align: center;
+	width: 170px;
+}
+.auth-panel input[type=submit]:hover {
+	background-position: 0 -53px;
+}
+
+.auth-panel .forgot-link {
+	color: #3a9cc6;
+	display: block;
+	font-size: 12px;
+	margin: 20px 0;
+}

@@ -1,0 +1,24 @@
+<html>  
+	<head>  
+		<title>Raphael Play</title>
+		<script type="text/javascript" src="jquery-1.9.1.js"></script>
+		<script type="text/javascript" src="fabric.js"></script>  
+		<script type="text/javascript" src="jsonData_fabric.js"></script>  
+		<script type="text/javascript">
+			$(document).ready(function(){
+				var canvas = new fabric.StaticCanvas('canvas_container');
+				canvas.setWidth(500);
+				canvas.setHeight(500);
+				canvas.loadFromDatalessJSON(jsonData);
+			});
+		</script>  
+		<style type="text/css">  
+			#canvas_container {  
+				border: 1px solid #aaa;  
+			}
+		</style>
+	</head>  
+	<body>
+		<canvas id="canvas_container"></canvas>
+	</body>  
+</html>  

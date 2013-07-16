@@ -1,0 +1,83 @@
+/* $TAGS
+---------------------------------*/
+html, body {
+	font-family: Verdana;
+	font-size: 12px;
+}
+body {
+	margin: 0;
+	padding: 0;
+}
+
+/* $ADVERT
+---------------------------------*/
+.adv {
+	/*background: #cc9;*/
+	height: 230px;
+	padding: 0 0 5px;
+	position: relative;
+}
+.adv-block-title {
+	color: #464646;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 0;
+    padding: 10px 0;
+}
+
+.adv-left-part {
+	float: left;
+	margin-right: 15px;
+	width: 124px;
+}
+.adv-picture {
+
+}
+.adv-picture img {
+
+}
+.amazon-info {
+	margin-top: 7px;
+}
+.amazon-info .amazon-link {
+	background: url(../images/amazon-link.png) no-repeat;
+	color: transparent;
+	display: block;
+	float: left;
+	font-size: 0;
+	height: 31px;
+	text-indent: -10000;
+	width: 69px;
+}
+.amazon-info .amazon-price {
+	color: #303030;
+    float: left;
+    font-size: 11px;
+    margin-left: 5px;
+    text-align: center;
+    width: 50px;
+}
+
+.adv-right-part {
+	float: left;
+	font-size: 11px;
+	width: 323px;
+}
+.adv-title {
+	color: #464646;
+	font-size: 11px;
+	font-weight: bold;
+	margin: 0;
+}
+.adv-product-info {
+	color: #2B2B2B;
+    line-height: 18px;
+    margin: 5px 0;
+}
+.adv-product-info .info-row {
+
+}
+.adv-description {
+	color: #939393;
+	line-height: 15px;
+}

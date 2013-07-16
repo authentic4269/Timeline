@@ -1,0 +1,80 @@
+<!-- Page start -->
+<div>
+
+	<!-- Header begin -->
+	<header class="login">
+
+		<!-- Logo begin -->
+		<div class="logo">
+			<img src="images/login-logo.png" alt="My site logo" />
+		</div>
+		<!-- Logo end -->
+
+	</header>
+	<!-- Header end -->
+
+	<!-- Content begin -->
+	<div class="content">
+		
+		<section class="auth-panel">
+			<h1 class="title">Register</h1>
+			<a class="login-link" href="#/login">
+				Already registered? Log in now
+				<img src="images/green-play-icon.png" />
+			</a>
+			<div class="error-message" ng-show="firstnameBlank || usernameTaken || lastnameBlank || usernameBlank || usernameInvalid || emailBlank || emailInvalid || passwordBlank || passwordInvalid || passwordShort || repeatPasswordInvalid" ng-cloak>
+				<p ng-show="usernameTaken = registerForm.username.$dirty && registerForm.username.$error.unique">"Username" is already taken. Pick a different username.</p> 
+				<p ng-show="firstnameBlank = registerForm.firstname.$dirty && registerForm.firstname.$error.required">"First Name" cannot be blank.</p>
+				<p ng-show="lastnameBlank = registerForm.lastname.$dirty && registerForm.lastname.$error.required">"Last Name" cannot be blank.</p>
+				<p ng-show="usernameBlank = registerForm.username.$dirty && registerForm.username.$error.required">"Username" cannot be blank</p>
+				<p ng-show="usernameInvalid = registerForm.username.$dirty && registerForm.username.$error.pattern">Only latin letters, numbers and underscore symbol are allowed in "Username" field.</p>
+				<p ng-show="emailBlank = registerForm.email.$dirty && registerForm.email.$error.required">"Email" cannot be blank.</p>
+				<p ng-show="emailInvalid = registerForm.email.$dirty && registerForm.email.$invalid">"Email" is not a valid email address.</p>
+				<p ng-show="passwordBlank = registerForm.password.$dirty && registerForm.password.$error.required">"Password" cannot be blank</p>
+				<p ng-show="passwordInvalid = registerForm.password.$dirty && registerForm.password.$error.pattern">"Only latin letters and numbers are allowed in "Password" field.</p>
+				<p ng-show="passwordShort = registerForm.password.$dirty && registerForm.password.$error.minlength">Password should contain at least 8 characters.</p>
+				<p ng-show="repeatPasswordInvalid = registerForm.repeatPassword.$dirty && (registerForm.password.$viewValue != registerForm.repeatPassword.$viewValue)">Passwords do not match.</p>
+				<p ng-show="false">Login or/and password are incorrect. Try again.</p>
+			</div>
+			<form name="registerForm" ng-submit="submit()" novalidate>
+				<div class="form-row">
+					<div class="form-column-left">
+						<label for="firstname">First Name:</label>
+						<input type="text" id="firstname" name="firstname" ng-model="register.firstname" placeholder="" class="small" required/>
+					</div>
+					<div class="form-column-right">
+						<label for="lastname">Last Name:</label>
+						<input type="text" id="lastname" name="lastname" ng-model="register.lastname" placeholder="" class="small" required/>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="form-row">
+					<label for="username">Username:</label>
+					<input type="text" id="username" name="username" ng-unique="users" ng-model="register.username" placeholder="" required ng-pattern="/^[\w0-9_]*$/"/>
+				</div>
+				<div class="form-row">
+					<label for="email">Email:</label>
+					<input type="email" id="email" name="email" ng-model="register.email" placeholder="" required blur-input-check/>
+				</div>
+				<div class="form-row">
+					<div class="form-column-left">
+						<label for="password">Password:</label>
+						<input type="password" id="password" name="password" ng-model="register.password" placeholder="" class="small" required ng-pattern="/^[\w0-9]*$/" ng-minlength="8" blur-input-check/>
+					</div>
+					<div class="form-column-right">
+						<label for="repeatPassword">Repeat password:</label>
+						<input type="password" id="repeatPassword" name="repeatPassword" ng-model="register.repeatPassword" placeholder="" class="small" required blur-input-check/>
+					</div>
+					<div class="form-help clear">Password should contain at least 8 characters</div>
+				</div>
+				<div class="form-row tcenter">
+					<input type="submit" value="Register" ng-disabled="registerForm.$invalid"/>
+				</div>
+			</form>
+		</section>
+
+	</div>
+	<!-- Content end -->
+	
+</div>
+<!-- Page end -->

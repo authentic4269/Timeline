@@ -1,0 +1,454 @@
+<!-- Page start -->
+<div ng-click="showAuthDropdown = false" ng-controller="MainCtrl" ng-init="loadProjects()">
+	<div class="page">
+
+		<!-- Header begin -->
+		<header>
+
+			<!-- Project info begin -->
+			<div class="project-info">
+				<div class="project-info-param">
+					<div class="param-name">Project Title:</div>
+					<div class="param-value bordered">{{project.title}}</div>
+				</div>
+				<div class="project-info-param">
+					<div class="param-name">Project ID:</div>
+					<div class="param-value">{{project.id}}</div>
+				</div>
+				<div class="project-info-param">
+					<div class="param-name">Author Name:</div>
+					<div class="param-value">
+						<a href="#"><!--{{project.author}}--></a>
+						<a class="more-link inversed" href="#">+{{project_count}} more</a>
+					</div>
+				</div>
+			</div>
+			<!-- Project info end -->
+
+			<!-- Social info begin -->
+			<div class="social-info">
+				<ul class="stats">
+					<li class="item">
+						<span class="stats-item-name">Rated:</span>
+						<span class="stats-item-value">{{project.rating}}</span>
+					</li>
+					<li class="item">
+						<span class="stats-item-name">Views:</span>
+						<span class="stats-item-value">{{project.views}}</span>
+					</li>
+					<li class="item">
+						<span class="stats-item-name">Edit:</span>
+						<span class="stats-item-value">Yes</span>
+					</li>
+					<li class="item">
+						<span class="stats-item-name">Grade:</span>
+						<span class="stats-item-value">A+</span>
+					</li>
+					<li class="item">
+						<span class="stats-item-name">Comments:</span>
+						<span class="stats-item-value">1234</span>
+					</li>
+				</ul>
+				<div class="clear"></div>
+				<div id="socialSlider" class="social-slider">
+					<div class="social-items-wrapper">
+						<ul class="social-items">
+							<li class="item">
+								<div class="twitter-share-button-container"><a href="https://twitter.com/share" class="twitter-share-button">Tweet</a></div>
+							</li>
+							<li class="item">
+								<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Ftimeline.mrgnix.com&amp;locale=en_US&amp;send=false&amp;layout=button_count&amp;width=96&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=arial&amp;height=21" scrolling="no" frameborder="0" allowtransparency="true" width="71px" height="20px"></iframe>
+							</li>
+							<li class="item">
+								<div class="g-plusone" data-size="medium" data-href="http://timeline.mgrnix.com"></div>
+							</li>
+							<li class="item">
+								<iframe src="http://www.reddit.com/static/button/button1.html?width=120&url=http%3A%2F%2Ftimeline.mgrnix.com%2F%23%2F&newwindow=1&title=Timeline&sr=Technology" height="22" width="120" scrolling='no' frameborder='0'></iframe>
+							</li>
+						</ul>
+					</div>
+					<a prevent-default class="prev" href="#"></a>
+					<a prevent-default class="next" href="#"></a>
+				</div>
+			</div>
+			<!-- Social info end -->
+
+			<!-- Top right block begin -->
+			<div class="top-right-block">
+				<div class="auth-dropdown" ng-show="loggedIn">
+					<a prevent-default class="auth-dropdown-username" href="#" ng-click="showAuthDropdown = !showAuthDropdown">
+						<span>Welcome, {{username}}</span>
+					</a>
+					<div class="auth-dropdown-popup" ng-cloak ng-animate="'menu'">
+						<ul>
+							<li><a href="#">My account</a></li>
+							<li><a href="#">My stuff</a></li>
+							<li><a ng-click="logout()" href="#">Logout</a></li>
+						</ul>
+					</div>
+				</div>
+				
+				<div class="auth-login" ng-hide="loggedIn">
+					<span><a href="#/login">Log in</a> or <a href="#/register">Register</a></span>
+				</div>
+			
+				<a class="buy-link" href="#">1.5m long prints available from £23.99</a>
+				<form class="search-panel" action="">
+					<input type="text" id="search" name="search" placeholder="Search project" />
+					<input type="submit" value="" />
+				</form>
+			
+			</div>
+			<!-- Top right block end -->
+
+			<!-- Line onfo blocks begin -->			
+			<div class="line-info">
+
+				<!-- Line slider begin -->
+				<div class="line-slider">
+					<div class="title">Event</div>
+					<ul class="items">
+						<li class="item active" ng-repeat='event in events'>
+							{{event.title}}
+						</li>
+						
+					</ul>
+					<a class="prev" href="#"></a>
+					<a class="next" href="#"></a>
+				</div>
+				<!-- Line slider end -->
+
+				<div class="line-text">
+					Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur...
+				</div>
+				<div class="line-actions">
+					<a class="more-link" href="#">+23 resources</a>
+				</div>
+			</div>
+			<div class="line-info">
+
+				<!-- Line slider begin -->
+				<div class="line-slider">
+					<div class="title">Line</div>
+					<ul class="items">
+						<li class="item active" ng-repeat="line in lines">{{line.title}}</li>
+					</ul>
+					<a class="prev" href="#"></a>
+					<a class="next" href="#"></a>
+				</div>
+				<!-- Line slider end -->
+
+				<div class="line-text">
+					Excepteur sint occaecat cupidatat non proident
+				</div>
+				<div class="line-actions">
+					<span class="pattern"></span>
+					<a class="more-link" href="#">full legend</a>
+				</div>
+			</div>
+			<!-- Line info blocks end -->
+
+			<!-- Time info begin -->
+			<div class="time-info">
+				<div class="from-date">
+					<span class="text">18:35:00</span>
+					<select class="gmt-dropdown">
+						<option value="-12">GMT -12</option>
+						<option value="-11">GMT -11</option>
+						<option value="-10">GMT -10</option>
+						<option value="-9">GMT -9</option>
+						<option value="-8">GMT -8</option>
+						<option value="-7">GMT -7</option>
+						<option value="-6">GMT -6</option>
+						<option value="-5">GMT -5</option>
+						<option value="-4">GMT -4</option>
+						<option value="-3">GMT -3</option>
+						<option value="-2">GMT -2</option>
+						<option value="-1">GMT -1</option>
+						<option value="0">GMT 0</option>
+						<option value="1">GMT 1</option>
+						<option value="2">GMT 2</option>
+						<option value="3">GMT 3</option>
+						<option value="4">GMT 4</option>
+						<option value="5">GMT 5</option>
+						<option value="6">GMT 6</option>
+						<option value="7">GMT 7</option>
+						<option value="8">GMT 8</option>
+						<option value="9">GMT 9</option>
+						<option value="10">GMT 10</option>
+						<option value="11">GMT 11</option>
+						<option value="12">GMT 12</option>
+					</select>
+					<span class="text">{{project.start_date_time}}/{{project.start_date_day}}/{{project.start_date_month}}/{{project.start_date_year}}</span>
+				</div>
+				<div class="to-date">
+					<span class="text">21:15:00</span>
+					<select class="gmt-dropdown">
+						<option value="-12">GMT -12</option>
+						<option value="-11">GMT -11</option>
+						<option value="-10">GMT -10</option>
+						<option value="-9">GMT -9</option>
+						<option value="-8">GMT -8</option>
+						<option value="-7">GMT -7</option>
+						<option value="-6">GMT -6</option>
+						<option value="-5">GMT -5</option>
+						<option value="-4">GMT -4</option>
+						<option value="-3">GMT -3</option>
+						<option value="-2">GMT -2</option>
+						<option value="-1">GMT -1</option>
+						<option value="0">GMT 0</option>
+						<option value="1">GMT 1</option>
+						<option value="2">GMT 2</option>
+						<option value="3">GMT 3</option>
+						<option value="4">GMT 4</option>
+						<option value="5">GMT 5</option>
+						<option value="6">GMT 6</option>
+						<option value="7">GMT 7</option>
+						<option value="8">GMT 8</option>
+						<option value="9">GMT 9</option>
+						<option value="10">GMT 10</option>
+						<option value="11">GMT 11</option>
+						<option value="12">GMT 12</option>
+					</select>
+					<span class="text">{{project.end_date_time}}/{{project.end_date_day}}/{{project.end_date_month}}/{{project.end_date_year}} =</span>
+				</div>
+				<div class="result-time">
+					<span class="text">14 yrs, 23 days, 10 hours, 15 minutes</span>
+				</div>
+			</div>
+			<!-- Time info end -->
+
+		</header>
+		<!-- Header end -->
+
+		<!-- Content begin -->
+		<div class="content">
+
+			<!-- Main menu begin -->
+			<div class="main-menu">
+				<div class="info-icon">
+					<img src="images/info-icon.png" />
+				</div>
+				
+				<!-- Main menu items begin -->
+				<ul class="items">
+					<li class="item flag-item">
+						<a href="#">Flag</a>
+					</li>
+					<li class="item pdf-item">
+						<a href="#">Get PDF</a>
+					</li>
+					<li class="item delete-item">
+						<a href="#">Delete</a>
+					</li>
+					<li class="item load-item">
+						<a href="#">Load</a>
+					</li>
+					<li class="item save-item">
+						<a href="#">Save</a>
+					</li>
+					<li class="item edit-item">
+						<a href="#">Edit</a>
+					</li>
+					<li class="item new-item first">
+						<a href="#">New</a>
+					</li>
+				</ul>
+				<!-- Main menu items end -->
+
+				<!-- Map legend begin -->
+				<div class="map-legend">
+					<div class="coords-info">
+						<div class="legend-row">x: 213mm</div>
+						<div class="legend-row">y: 083mm</div>
+					</div>
+					<div class="page-info">
+						<div class="title">Page</div>
+						<div class="legend-row">2 / 8</div>
+					</div>
+					<div class="scale-info">
+						<a class="scale-minus" href="#">&nbsp;</a>
+						<span class="scale-value">125%</span>
+						<a class="scale-plus" href="#">&nbsp;</a>
+					</div>
+				</div>
+				<!-- Map legend end -->
+
+				<div class="clear"></div>
+			</div>
+			<!-- Main menu end -->
+			
+			<!-- Left panel begin -->
+			<div class="left-panel">	
+				
+				<!-- Sidebar begin -->
+				<div class="sidebar"> <!--ng-class="{'sidebar-opened': adHidden}"-->
+
+					<!-- Sidebar nav begin -->
+					<div class="sidebar-nav">
+						<ul class="breadcrumbs">
+							<li class="item">
+								<a href="#">Project Overview</a>
+							</li>
+							<li class="item">
+								<a href="#">L2</a>
+							</li>
+							<li class="item">
+								<a href="#">E1</a>
+							</li>
+						</ul>
+						<div class="sidebar-links">
+							<a href="#" class="prev">Prev</a>
+							<a href="#" class="next">Next</a>
+						</div>
+						<div class="clear"></div>
+					</div>
+					<!-- Sidebar nav end -->
+
+					<!-- Sidebar items begin -->
+					<ul class="sidebar-items" ng-class="{'sidebar-items-opened': adHidden}">
+						<li class="item">
+							<a href="#">
+								<span class="item-picture">
+									<img src="images/sidebar/overview.png" />
+								</span>
+								<span class="item-title">
+									Overview
+								</span>
+							</a>
+						</li>
+						<li class="item">
+							<a href="#">
+								<span class="item-picture">
+									<img src="images/sidebar/design-options.png" />
+								</span>
+								<span class="item-title">
+									Design Options
+								</span>
+							</a>
+						</li>
+						<li class="item">
+							<a href="#">
+								<span class="item-picture">
+									<img src="images/sidebar/timer.png" />
+								</span>
+								<span class="item-title">
+									Calendars, Clocks & Timer
+								</span>
+							</a>
+						</li>
+						<li class="item">
+							<a href="#">
+								<span class="item-picture">
+									<img src="images/sidebar/maps.png" />
+								</span>
+								<span class="item-title">
+									Maps
+								</span>
+								<span class="item-counter">5</span>
+							</a>
+						</li>
+						<li class="item">
+							<a href="#">
+								<span class="item-picture">
+									<img src="images/sidebar/film.png" />
+								</span>
+								<span class="item-title">
+									Film, TV & Video
+								</span>
+								<span class="item-counter">12</span>
+							</a>
+						</li>
+						<li class="item">
+							<a href="#">
+								<span class="item-picture">
+									<img src="images/sidebar/books.png" />
+								</span>
+								<span class="item-title">
+									Books
+								</span>
+								<span class="item-counter">22</span>
+							</a>
+						</li>
+						<li class="item">
+							<a href="#">
+								<span class="item-picture">
+									<img src="images/sidebar/images.png" />
+								</span>
+								<span class="item-title">
+									Images
+								</span>
+								<span class="item-counter">37</span>
+							</a>
+						</li>
+						<li class="item">
+							<a href="#">
+								<span class="item-picture">
+									<img src="images/sidebar/music.png" />
+								</span>
+								<span class="item-title">
+									Music & Audio
+								</span>
+								<span class="item-counter">10</span>
+							</a>
+						</li>
+						<li class="item">
+							<a href="#">
+								<span class="item-picture">
+									<img src="images/sidebar/weather.png" />
+								</span>
+								<span class="item-title">
+									Weather & Almanac
+								</span>
+							</a>
+						</li>
+					</ul>
+					<!-- Sidebar items end -->
+
+				</div>
+				<!-- Sidebar end -->
+
+				<!-- Advert start -->
+				<div ng-hide="adHidden" class="adv-wrapper" ng-animate="{hide: 'animated fadeOut'}">
+					<iframe class="adv-frame" src="adv.html" frameborder="0"></iframe>
+					<div ng-click="adHidden = true" class="adv-close"></div>
+				</div>
+				<!-- Advert end -->
+
+			</div>
+			<!-- Left panel end -->
+
+			<!-- Timeline begin -->
+			<div id="timeline" class="timeline">	
+				Timeline
+			</div>
+			<!-- Timeline end -->
+
+			<div class="clear"></div>
+
+		</div>
+		<!-- Content end -->
+	<div class="tags">
+
+	<div class="tag-input-ctn">
+		<div data-ng-repeat="(key, tag) in inputTags" class="input-tag">
+			{{ tag.name }}
+			<div class="delete-tag" data-ng-click="deleteTag(key)">&times;</div>
+		</div>
+
+		<input type="text" data-tag-input="" data-ng-model="tagText" data-ng-style="{width: inputWidth}" data-new-tag="addTag()"">
+
+	</div>
+
+	<!-- Javascript -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.1.4/angular.min.js"></script>
+	<script src="tags.js"></script>
+</body>
+	<form>
+        <p></p>
+            <ul id="allowSpacesTags"></ul>
+    </form>
+	</div>
+		<!-- Page end -->
+</div>
